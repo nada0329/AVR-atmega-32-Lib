@@ -114,8 +114,8 @@ void DIO_voidSetPinDir(u8 PortName , u8 PinNum , u8 PinDir)
     	{
     		if(PinDir == input)
     			{
-    			  clrbit(DDRA_REG,PinNum);
-    			  setbit(PORTA_REG,PinNum);
+					setbit(PORTA_REG,PinNum);
+					clrbit(DDRA_REG,PinNum);
     			}
     		else if(PinDir == output)
     			setbit(DDRA_REG,PinNum);
@@ -125,8 +125,8 @@ void DIO_voidSetPinDir(u8 PortName , u8 PinNum , u8 PinDir)
     	{
     		if(PinDir == input)
     		    {
+					setbit(PORTB_REG,PinNum);
     				clrbit(DDRB_REG,PinNum);
-    				setbit(PORTB_REG,PinNum);
     		    }
     		else if(PinDir == output)
    	  			setbit(DDRB_REG,PinNum);
@@ -136,8 +136,8 @@ void DIO_voidSetPinDir(u8 PortName , u8 PinNum , u8 PinDir)
     	{
     		if(PinDir == input)
     		{
+    			setbit(PORTC_REG,PinNum);				
     			clrbit(DDRC_REG,PinNum);
-    			setbit(PORTC_REG,PinNum);
     		}
     		else if(PinDir == output)
     			setbit(DDRC_REG,PinNum);
@@ -147,8 +147,8 @@ void DIO_voidSetPinDir(u8 PortName , u8 PinNum , u8 PinDir)
     	{
     		if(PinDir == input)
     		{
+    			setbit(PORTD_REG,PinNum);				
     			clrbit(DDRD_REG,PinNum);
-    			setbit(PORTD_REG,PinNum);
     		}
     		else if(PinDir == output)
        			setbit(DDRD_REG,PinNum);
