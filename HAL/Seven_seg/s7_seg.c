@@ -4,7 +4,7 @@
 
 void S7SEG_voidInit(u8 PortName)
 {
-	DIO_viodSetPortDir(PortName, 0x01);
+	DIO_viodSetPortDir(PortName, 0xff);
 }
 //----------------------------------------------------------
 void S7SEG_voidDisplay(u8 PortName , u8 Numberon7Seg)
