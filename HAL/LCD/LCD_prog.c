@@ -42,6 +42,7 @@ void LCD_voidInit(void)
 	_delay_ms(1);
 	DIO_voidSetPinVal(E_PORT , E , low);
 	
+	 SendInstruction(0b00000010);
 	 SendInstruction(0b00101000);  // DB4=0
 	_delay_ms(40);
 	 SendInstruction(display_on_off);
