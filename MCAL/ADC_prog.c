@@ -5,7 +5,7 @@
 #include "ADC_conf.h"
 #include "ADC_int.h"
 
-u16 Result;
+u16 Result=0;
 void ADC_vidInit(void)
 {
 	ADCMUX_REG= (ADC_VREF << REFS0)|(ADC_RESULT_ADJUST << ADLAR);
@@ -48,4 +48,6 @@ u16 ADC_u16GetConv(void)
 ISR(ADC)
 {
 	Result=ADCSRA_REG;
+	// disable INT
+	clrbit(ADCSRA_REG,ADIE);
 }
