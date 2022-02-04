@@ -1,6 +1,13 @@
 #ifndef _EXTI_PRIVATE_H_
 #define _EXTI_PRIVATE_H_
 
+#define EXTI_LOW_LEVEL_SC		0	/*Low Level Sense Control*/
+#define EXTI_FALLING_EDGE_SC	1	/*Falling Edge Sense Control*/
+#define EXTI_RISING_EDGE_SC		2	/*Rising Edge Sense Control*/
+#define EXTI_ON_CHANGE_SC		3	/*On Change Sense Control*/
+
+
+
 /*Control Registers for INT0, INT1*/
 #define MCUCR 		*((volatile u8*)0x55)
 #define MCUCR_ISC00_PIN 		0
