@@ -9,6 +9,7 @@ u16 Result;
 void ADC_vidInit(void)
 {
 	ADCMUX_REG= (ADC_VREF << REFS0)|(ADC_RESULT_ADJUST << ADLAR);
+	
 	ADCSRA_REG= (1<<ADEN)|(ADC_PRESCALAR);
 	
 }
@@ -35,6 +36,8 @@ void ADC_vidStartConv(u8)
 	ADCMUX_REG= (ADCMUX_REG & 0xf8) | u8ChIdx;
 	// start conv
 	ADCSRA_REG |= (1<< ADSC);
+	// enable INT
+	setbit(ADCSRA_REG,ADIE);
 	
 }
 u16 ADC_u16GetConv(void)
