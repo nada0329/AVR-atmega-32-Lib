@@ -45,9 +45,17 @@ u16 ADC_u16GetConv(void)
 	return Result;
 }
 
+void (* ADCINT_Func)(void) = NULL;
+void ADCINT_CallBack (void(*func)(void)){
+	/*CAll back function pointing to the passed function argument*/
+	ADCINT_Func = func ;
+}
+
 ISR(ADC)
 {
 	Result=ADCSRA_REG;
+	if(ADCINT_Func != NULL)
+		ADCINT_Func();
 	// disable INT
 	clrbit(ADCSRA_REG,ADIE);
 }
