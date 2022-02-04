@@ -1,5 +1,6 @@
 #include "../TYPES.h"
 #include "../BIT_LEVEL.h"
+#include "IVT.h"
 #include "ADC_private.h"
 #include "ADC_conf.h"
 #include "ADC_int.h"
