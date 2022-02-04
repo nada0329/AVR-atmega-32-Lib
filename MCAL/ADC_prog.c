@@ -41,9 +41,7 @@ u16 ADC_u16GetConv(void)
 	return Result;
 }
 
-
-void __vector_16 (void) __attribute__((signal)) ;
-
-void __vector_16 (void){
+ISR(ADC)
+{
 	Result=ADCSRA_REG;
 }
